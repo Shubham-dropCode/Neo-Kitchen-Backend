@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cabinats",
+  "info": {
+    "singularName": "cabinat",
+    "pluralName": "cabinats",
+    "displayName": "cabinat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Product_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Product_name"
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Thumbnail_Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Slider_Images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "cabinats"
+    },
+    "Features": {
+      "type": "text"
+    },
+    "Accessories": {
+      "type": "text"
+    },
+    "Price": {
+      "type": "decimal"
+    }
+  }
+}

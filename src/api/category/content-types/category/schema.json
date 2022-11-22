@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "singularName": "category",
+    "pluralName": "categories",
+    "displayName": "Categorie",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Categorie_Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Categorie_Name",
+      "required": true
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Categories_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "faucets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::faucet.faucet",
+      "mappedBy": "category"
+    },
+    "accessories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::accessorie.accessorie",
+      "mappedBy": "category"
+    },
+    "sinks": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sink.sink",
+      "mappedBy": "category"
+    },
+    "cabinats": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cabinat.cabinat",
+      "mappedBy": "category"
+    },
+    "CTA": {
+      "type": "string"
+    },
+    "slabs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::slab.slab",
+      "mappedBy": "category"
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slabs",
+  "info": {
+    "singularName": "slab",
+    "pluralName": "slabs",
+    "displayName": "Slab"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProductNmae": {
+      "type": "string",
+      "required": true
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "ProductNmae",
+      "required": true
+    },
+    "Title": {
+      "type": "string"
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "Thickness": {
+      "type": "string"
+    },
+    "Finishes": {
+      "type": "string"
+    },
+    "Size": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Image_Slider": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "slabs"
+    }
+  }
+}

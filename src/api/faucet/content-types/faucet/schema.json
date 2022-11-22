@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "faucets",
+  "info": {
+    "singularName": "faucet",
+    "pluralName": "faucets",
+    "displayName": "Faucet",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ProductName": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "ProductName",
+      "required": true
+    },
+    "Title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "SubTitle": {
+      "type": "string"
+    },
+    "Features": {
+      "type": "text"
+    },
+    "Accessories": {
+      "type": "text"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "Thubnail_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Image_Slider": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "faucets"
+    },
+    "Price": {
+      "type": "decimal"
+    }
+  }
+}
