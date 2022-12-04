@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "cabinats",
+  "collectionName": "products",
   "info": {
-    "singularName": "cabinat",
-    "pluralName": "cabinats",
-    "displayName": "cabinat",
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
     "description": ""
   },
   "options": {
@@ -12,29 +12,29 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Product_name": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "Title": {
+      "type": "string"
     },
     "Slug": {
       "type": "uid",
-      "targetField": "Product_name"
+      "targetField": "Title",
+      "required": true
     },
-    "Title": {
-      "type": "string",
-      "required": true,
-      "unique": true
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "products"
     },
-    "SubTitle": {
-      "type": "string"
-    },
-    "Description": {
-      "type": "richtext"
+    "sub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "products"
     },
     "Thumbnail_Image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images",
@@ -54,16 +54,10 @@
         "audios"
       ]
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "cabinats"
+    "Description": {
+      "type": "richtext"
     },
-    "Features": {
-      "type": "text"
-    },
-    "Accessories": {
+    "Sub_Title": {
       "type": "text"
     },
     "Price": {

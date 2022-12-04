@@ -36,38 +36,20 @@
         "audios"
       ]
     },
-    "faucets": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::faucet.faucet",
-      "mappedBy": "category"
-    },
-    "accessories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::accessorie.accessorie",
-      "mappedBy": "category"
-    },
-    "sinks": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::sink.sink",
-      "mappedBy": "category"
-    },
-    "cabinats": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::cabinat.cabinat",
-      "mappedBy": "category"
-    },
     "CTA": {
       "type": "string"
     },
-    "slabs": {
+    "products": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::slab.slab",
-      "mappedBy": "category"
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "categories"
+    },
+    "sub_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-category.sub-category",
+      "inversedBy": "categories"
     }
   }
 }

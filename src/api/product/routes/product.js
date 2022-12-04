@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * slab router
+ * product router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::slab.slab');
+module.exports = createCoreRouter('api::product.product');

@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * cabinat service
+ * product service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::cabinat.cabinat');
+module.exports = createCoreService('api::product.product');
